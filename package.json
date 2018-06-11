@@ -26,13 +26,14 @@
     "@ngrx/store-devtools": "^6.0.1",
     "@ngrx/store-log-monitor": "^3.0.2",
     "@rxjs/rx": "^4.1.0",
-    "bootstrap": "^4.1.1",
+    "bootstrap": "^3.3.7",
     "core-js": "^2.5.4",
     "font-awesome": "^4.7.0",
     "hoek": "^5.0.3",
     "ng2-breadcrumb": "^0.5.14",
     "primeng": "^5.2.7",
     "rxjs": "^6.0.0",
+    "rxjs-compat": "^6.2.0",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {

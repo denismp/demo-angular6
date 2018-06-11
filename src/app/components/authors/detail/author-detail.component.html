@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="row">
+        <!-- <div class="col-md-4">
+            <div class="form-group">
+                <label for="">Book Id</label>
+                <input type="text" class="form-control" disabled=true value="{{selectedBook.id}}"/>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="">Publish Date</label>
+                <input type="text" class="form-control" disabled=true value="{{selectedBook.publishDate}}"/>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="">Title</label>
+                <input type="text" class="form-control" disabled=true value="{{selectedBook.title}}"/>
+            </div>
+        </div> -->
+
+        <div class="col-md-1">
+            <div class="form-group">
+                <label for="">Author Id</label>
+                <input type="text" class="form-control" disabled=true value="{{selectedAuthor.id}}" [style]="{'width': '100px'}" />
+            </div>
+        </div>
+        <div class="col-md-11">
+            <div class="form-group">
+                <label for="">Author</label>
+                <input type="text" class="form-control" disabled=true value="{{selectedAuthor.name}}" [style]="{'width': '100%'}"/>
+            </div>
+        </div>
+    </div>
+
+    <!-- <app-authors-list></app-authors-list> -->
+
+    <!-- <div class="row">
+        <button type="button" class="btn btn-primary btn-sm pull-right" style="margin-right:15px; margin-top:5px; margin-bottom:5px"
+            (click)="addAuthor()">Add Author</button>
+    </div> -->
+</div>
+
+<!-- export interface Book {
+    id: number;
+    title: string;
+    author: Author;
+    user: User;
+    publishDate: Date;
+    createdBy: string;
+    createdDate: Date;
+    updatedBy: string;
+    updatedDate: Date;
+} -->
+
+<!-- export interface Author {
+    id: number;
+    name: string;
+    books: Array<Book>;
+    authorName: string;
+    publishDate: Date;
+    createdBy: string;
+    createdDate: Date;
+    updatedBy: string;
+    updatedDate: Date;
+} -->

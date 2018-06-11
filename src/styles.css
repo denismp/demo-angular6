@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("../node_modules/font-awesome/css/font-awesome.min.css");
+@import url("../node_modules/primeng/resources/themes/omega/theme.css");
+@import url("../node_modules/primeng/resources/primeng.min.css");
+@import url("../node_modules/bootstrap/dist/css/bootstrap.min.css");
+@import url("assets/css/guide.css");
+
+* primeng overrides */
+.ui-picklist-source-controls {
+    display: none !important;
+}
+ 
+.ui-picklist-source-controls.ui-picklist-buttons {
+    display: none !important;
+}
+
+.ui-picklist-target-controls {
+    display: none !important;
+}
+
+.ui-picklist-target-controls.ui-picklist-buttons {
+    display: none !important;
+}
+
+.ui-picklist-listwrapper {
+    width: 45% !important;
+}
+ 
+.ui-widget-header .ui-button, .ui-widget-content .ui-button, .ui-widget.ui-button, .ui-button,
+.ui-widget-header .ui-button:focus, .ui-widget-content .ui-button:focus, .ui-widget.ui-button:focus, .ui-button:focus {
+    border: 1px solid #2e6da4;
+    color: #FFFFFF;
+    background: #1e5f89;
+    transition: background-color .2s;
+}
+.ui-widget-header .ui-button:hover, .ui-widget-content .ui-button:hover, .ui-widget.ui-button:hover, .ui-button:hover,
+.ui-widget-header .ui-button:active, .ui-widget-content .ui-button:active, .ui-widget.ui-button:active, .ui-button:active {
+    border: 1px solid #204d74 !important;
+    background: #15425f !important;
+}

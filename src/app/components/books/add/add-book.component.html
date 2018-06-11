@@ -1,0 +1,53 @@
+<div class="container">
+    <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+        <!-- <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <app-add-book-author-pick-list (onTargetChanged)="setSourceBookAuthors($event)"></app-add-book-author-pick-list>
+                </div>
+            </div>
+        </div> -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">Title</label>
+                    <input type="text" class="form-control" value="{{selectedBook.title}}" formControlName="title">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">Author Name</label>
+                    <input type="text" class="form-control" value="{{authorName}}" formControlName="authorName">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">Publish Date</label>
+                    <input type="date" class="form-control" value="{{selectedBook.publishDate | date:'medium'}}" formControlName="publishDate">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <button type="submit" class="btn btn-primary btn-sm pull-left" style="margin-left:15px; margin-right:15px; margin-top:5px; margin-bottom:5px">Save Book</button>
+            <button type="button" class="btn btn-primary btn-sm pull-left" style="margin-left:15px; margin-right:15p;  margin-top:5px; margin-bottom:5px"
+                (click)="onCancel()">Cancel</button>
+        </div>
+    </form>
+</div>
+
+<!-- export interface Book {
+    id: number;
+    title: string;
+    authors: Array<Author>;
+    user: User;
+    publishDate: Date;
+    createdBy: string;
+    createdDate: Date;
+    updatedBy: string;
+    updatedDate: Date;
+} -->

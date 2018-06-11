@@ -1,0 +1,74 @@
+<div class="container">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="">User Id</label>
+                    <input type="text" class="form-control" value="{{selectedUser.id}}" formControlName="id" />
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input type="text" class="form-control" value="{{selectedUser.email}}" formControlName="email" />
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="">Name</label>
+                    <input type="text" class="form-control" value="{{selectedUser.name}}" formControlName="name" />
+                </div>
+            </div>
+        </div>
+
+        <!-- <app-authors-list></app-authors-list> -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <app-user-books-pick-list (onTargetChanged)="setTargetBooks($event)" (onSourceChanged)="setSourceBooks($event)"></app-user-books-pick-list>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <button type="submit" class="btn btn-primary btn-sm pull-left" style="margin-right:15px; margin-top:5px; margin-bottom:5px">Save</button>
+            <button type="button" class="btn btn-primary btn-sm pull-left" style="margin-right:15px; margin-top:5px; margin-bottom:5px"
+                (click)="onCancel()">Cancel</button>
+        </div>
+    </form>
+</div>
+
+<!-- resetUser() {
+    const emptyItem: User = {
+        id: null,
+        email: '',
+        name: '',
+        books: null,
+        createdBy: '',
+        createdDate: null,
+        updatedBy: '',
+        updatedDate: null
+    }; -->
+<!-- export interface Book {
+    id: number;
+    title: string;
+    author: Author;
+    user: User;
+    publishDate: Date;
+    createdBy: string;
+    createdDate: Date;
+    updatedBy: string;
+    updatedDate: Date;
+} -->
+
+<!-- export interface Author {
+    id: number;
+    name: string;
+    books: Array<Book>;
+    authorName: string;
+    publishDate: Date;
+    createdBy: string;
+    createdDate: Date;
+    updatedBy: string;
+    updatedDate: Date;
+} -->

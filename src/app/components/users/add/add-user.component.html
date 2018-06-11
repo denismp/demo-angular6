@@ -1,0 +1,41 @@
+<div class="container">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <!-- <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <app-add-book-author-pick-list (onTargetChanged)="setSourceAuthorAuthors($event)"></app-add-book-author-pick-list>
+                </div>
+            </div>
+        </div> -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="">Name</label>
+                    <input type="text" class="form-control" value="{{selectedUser.name}}" formControlName="name">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input type="text" class="form-control" value="{{selectedUser.email}}" formControlName="email">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <button type="submit" class="btn btn-primary btn-sm pull-left" style="margin-left:15px; margin-right:15px; margin-top:5px; margin-bottom:5px">Save User</button>
+            <button type="button" class="btn btn-primary btn-sm pull-left" style="margin-left:15px; margin-right:15p;  margin-top:5px; margin-bottom:5px" (click)="onCancel()">Cancel</button>
+        </div>
+    </form>
+</div>
+
+<!-- selectedAuthor: Author = {
+    id: null,
+    name: '',
+    books: null,
+    createdBy: '',
+    createdDate: null,
+    updatedBy: '',
+    updatedDate: null
+}; -->

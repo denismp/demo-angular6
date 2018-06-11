@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="col-md-12">
+
+        <p-dataTable [value]="users" [rows]="10" expandableRows="true" [paginator]="true" [responsive]="true" selectionMode="single"
+            [(selection)]="selectedUser">
+            <p-header>
+                <b>User</b>
+            </p-header>
+            <p-column expander="true" styleClass="col-icon" [style]="{'width': '30px'}"></p-column>
+            <p-column field="id" header="ID" [sortable]="true"></p-column>
+            <p-column field="email" header="Email" [sortable]="true"></p-column>
+            <p-column field="name" header="Name" [sortable]="true"></p-column>
+            <p-column field="books" header="Actions" [sortable]="false" [filter]="false" [style]="{'width': '100px'}">
+                <ng-template let-row="rowData" pTemplate type="body">
+                    <span class="fa fa-search fa-15" (click)="routeToUser(row)">
+                        <span class="sr-only">View</span>
+                    </span>
+                </ng-template>
+            </p-column>
+            <ng-template let-user pTemplate="rowexpansion">
+                <div class="ui-g">
+                    <div class="uig-12 ui-md-6">
+                        <b>Record created date: </b>{{ user.createdDate | date }}</div>
+                    <div class="uig-12 ui-md-6">
+                        <b>Record created by: </b>{{ user.createdBy }}</div>
+                    <div class="uig-12 ui-md-6">
+                        <b>Record last updated: </b>{{ user.updatedDate | date }}</div>
+                    <div class="uig-12 ui-md-6">
+                        <b>Record last updated by: </b>{{ user.updatedBy }}</div>
+                </div>
+            </ng-template>
+        </p-dataTable>
+        <div class="row">
+            <button type="button" class="btn btn-primary btn-sm pull-right" style="margin-right:0px; margin-top:5px; margin-bottom:5px"
+                (click)="addUser($event)">Add User</button>
+        </div>
+    </div>
+</div>
+
+<!-- const emptyItem: User = {
+    id: null,
+    email: '',
+    name: '',
+    books: null,
+    createdBy: '',
+    createdDate: null,
+    updatedBy: '',
+    updatedDate: null
+}; -->

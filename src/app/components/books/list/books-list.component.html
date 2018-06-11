@@ -1,0 +1,87 @@
+<div class="row">
+    <div class="col-md-12">
+        <p-dataTable [value]="books" [rows]="10" expandableRows="true" [paginator]="true" [responsive]="true" selectionMode="single"
+            [(selection)]="selectedBook" (onRowExpand)="onRowExpand($event)">
+            <p-header>
+                <b>Books</b>
+            </p-header>
+            <p-column expander="true" styleClass="col-icon" [style]="{'width': '30px'}"></p-column>
+            <p-column field="id" header="ID" [sortable]="true"></p-column>
+            <p-column field="publishDate" header="Publish Date" [sortable]="true" [style]="{'width': '100px'}">
+                <ng-template let-row="rowData" pTemplate="body">
+                    {{ row.publishDate | date: 'yyyy-MM-dd' }}
+                </ng-template>
+            </p-column>
+            <p-column field="title" header="Title" [sortable]="true"></p-column>
+
+            <p-column field="books" header="Actions" [sortable]="false" [filter]="false" [style]="{'width': '100px'}">
+                <ng-template let-row="rowData" pTemplate type="body">
+                    <span class="fa fa-search fa-15" (click)="routeToBook(row)">
+                        <span class="sr-only">View</span>
+                    </span>
+                </ng-template>
+            </p-column>
+
+            <ng-template let-book pTemplate="rowexpansion">
+
+                <div class="row">
+                    <div class="ui-g">
+                        <div class="uig-12 ui-md-6">
+                            <b>Record created date: </b>{{ book.createdDate | date }}</div>
+                        <div class="uig-12 ui-md-6">
+                            <b>Record created by: </b>{{ book.createdBy }}</div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="ui-g">
+                        <div class="uig-12 ui-md-6">
+                            <b>Record last updated: </b>{{ book.updatedDate | date }}</div>
+                        <div class="uig-12 ui-md-6">
+                            <b>Record last updated by: </b>{{ book.updatedBy }}</div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="ui-g">
+                        <div class="uig-12 ui-md-6">
+                            <b>UserName: </b>{{ book.user.name }}
+                        </div>
+                        <div class="uig-12 ui-md-6">
+                            <b>User Email: </b>{{ book.user.email }}
+                        </div>
+                    </div>
+                </div>
+
+            </ng-template>
+        </p-dataTable>
+        <div class="row">
+            <button type="button" class="btn btn-primary btn-sm pull-right" style="margin-right:0px; margin-top:5px; margin-bottom:5px"
+                (click)="addBook()">Add Book</button>
+        </div>
+        </div>
+    </div>
+
+
+    <!-- export interface Book {
+    id: number;
+    title: string;
+    authors: Array<Author>;
+    user: User;
+    publishDate: Date;
+    createdBy: string;
+    createdDate: Date;
+    updatedBy: string;
+    updatedDate: Date;
+} -->
+
+    <!-- export interface User {
+    id: number;
+    email: string;
+    name: string;
+    books: Array<Book>;
+    createdBy: string;
+    createdDate: Date;
+    updatedBy: string;
+    updatedDate: Date;
+} -->
